@@ -1,5 +1,9 @@
 A simple shell script to verify "git status" in a directory containing alot of git projects.
 
+Depends on *nix like platform bash/find/sed
+
+Usage:
+  git-dir /directory-that-contains-several-projects/
 
 License:
 (The MIT License)
