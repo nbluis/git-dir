@@ -1,0 +1,14 @@
+#!/bin/bash
+
+projects=$(find $1 -type d -name '.git' -depth 2 |sed 's#\(.*\)/.*#\1#')
+
+for project in $projects ; do
+  cd "$project"
+  status=$(git status --porcelain)
+  if [ ${#status} -gt "0" ]; then
+    echo "$project [modified]"
+  else
+    echo "$project [ok]"
+  fi
+  cd ..
+done
